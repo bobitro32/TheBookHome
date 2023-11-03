@@ -24,19 +24,25 @@
                 <label for="email">Email</label>
             </div>
             <div class="inputBox">
-                <input type="text" name="password" id="password" required>
-                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+                <label for="password">Create &nbsp Password</label>
             </div>
             <div class="inputBox">
-                <input type="text" name="confirmPassword" id="confirmPassword" required>
-                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" required>
+                <label for="confirmPassword">Confirm &nbsp Password</label>
             </div>
             <div class="inputBox">
                 <input type="submit" value="Create">
             </div>
-            <p>Already have an account ?<a th:href="login">Login</a></p>
+            <p>Already have an account ?<a th:href="login"> Login</a></p>
         </form>
     </main>
+    <script>
+        let label = document.querySelectorAll('label').
+        forEach(label => {
+            label.innerHTML = label.innerText.split('').map((letters,i)=>  `<span style="transition-delay: ${i*50}ms">${letters}</span>`).join('');
+        })
+    </script>
 
 </body>
 </html>

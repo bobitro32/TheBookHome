@@ -6,7 +6,7 @@
 
 }
 nav{
-    background-color: #222222;
+    background-color: #3b4460;
     padding: 10px 40px 10px 70px;
     border: 1px solid #000;
     border-left: none;
@@ -31,7 +31,11 @@ nav ul div.items{
      font-size: 20px;
      padding: 0 12px;
 
- }nav ul .search-icon{
+
+}nav ul div.items a:hover{
+      color: red;
+
+}nav ul .search-icon{
       height: 40px;
       width: 240px;
       display: flex;
@@ -81,7 +85,7 @@ nav ul .search-icon .icon:hover{
         display: none;
     }nav ul div.items{
          flex:4;
-     }
+    }
 }@media screen and (max-width: 800px){
     nav ul li.btn{
         display: block;
@@ -94,7 +98,7 @@ nav ul .search-icon .icon:hover{
         z-index: -1;
         position: fixed;
         top: -400px;
-        background: #222222;
+        background: #3b4460;
         right: 0;
         width: 100%;
         display: inline-block;
