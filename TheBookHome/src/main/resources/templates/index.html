@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>TheBookHome</title>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+
+                <li class="logo">TheBookHome</li>
+                <li class="btn"><span class="fa fa-bars"></span></li>
+                <div class="items">
+
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Categories</a></li>
+                    <li><a href="">Login</a></li>
+                    <li><a th:href="register">Register</a></li>
+                    <li><a href="">Logout</a></li>
+                    <li><a href="">Profile</a></li>
+                    <li><a href=""><span class="fa fa-shopping-cart"></span></a></li>
+
+                </div>
+                <li class="search-icon">
+                    <input type="search" id="search" placeholder="Search">
+                    <label  class="icon" for="search">
+                        <i class="fa fa-search"></i>
+                    </label>
+
+                </li>
+            </ul>
+        </nav>
+        <script>
+            $('nav ul li.btn span').click(function(){
+                $('nav ul div.items').toggleClass("show")
+                $('nav ul li.btn span').toggleClass('show')
+            })
+        </script>
+    </header>
+
+
+</body>
+</html>

@@ -3,7 +3,7 @@
     padding: 0;
     color: #f2f2f2;
     box-sizing: border-box;
-    
+
 }
 nav{
     background-color: #222222;
@@ -27,51 +27,51 @@ nav ul div.items{
     display: inline-flex;
 
 }nav ul div.items a{
-   text-decoration: none;
-   font-size: 20px;
-   padding: 0 12px;
+     text-decoration: none;
+     font-size: 20px;
+     padding: 0 12px;
 
-}nav ul .search-icon{
-    height: 40px;
-    width: 240px;
-    display: flex;
-    background: #f2f2f2;
-    border-radius: 5px;
-}nav ul .search-icon input{
-    height: 100%;
-    width: 200px;
-    border: none;
-    outline:none;
-    padding: 0 10px;
-    border-radius: 5px  0 0 5px;
-}nav ul .search-icon .icon{
-    height: 100%;
-    width: 40px;
-    line-height: 40px;
-    text-align: center;
-    background: #ccccccb0;
-    border-radius: 0  5px 5px 0;
-    cursor: pointer;
-}
+ }nav ul .search-icon{
+      height: 40px;
+      width: 240px;
+      display: flex;
+      background: #f2f2f2;
+      border-radius: 5px;
+  }nav ul .search-icon input{
+       height: 100%;
+       width: 200px;
+       border: none;
+       outline:none;
+       padding: 0 10px;
+       border-radius: 5px  0 0 5px;
+   }nav ul .search-icon .icon{
+        height: 100%;
+        width: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: #ccccccb0;
+        border-radius: 0  5px 5px 0;
+        cursor: pointer;
+    }
 nav ul .search-icon .icon:hover{
     background: #e6e6e6;
 }nav ul li.btn{
-    font-size: 29px;
-    flex:1;
-    padding: 0 40px ;
-    display: none;
+     font-size: 29px;
+     flex:1;
+     padding: 0 40px ;
+     display: none;
 
-}nav ul li.btn span{
-    height: 42px;
-    width: 42px;
-    text-align: center;
-    line-height: 42px;
-    border: 1px solid #151515;
-    border-radius: 5px;
-    cursor: pointer;
-}nav ul li.btn span.show:before{
-    content: '\f00d';
-}
+ }nav ul li.btn span{
+      height: 42px;
+      width: 42px;
+      text-align: center;
+      line-height: 42px;
+      border: 1px solid #151515;
+      border-radius: 5px;
+      cursor: pointer;
+  }nav ul li.btn span.show:before{
+       content: '\f00d';
+   }
 
 @media screen and (max-width: 1052px){
     nav{
@@ -80,8 +80,8 @@ nav ul .search-icon .icon:hover{
     nav ul li.logo{
         display: none;
     }nav ul div.items{
-        flex:4;
-    }
+         flex:4;
+     }
 }@media screen and (max-width: 800px){
     nav ul li.btn{
         display: block;
@@ -100,8 +100,8 @@ nav ul .search-icon .icon:hover{
         display: inline-block;
         transition: top .4s;
     }nav ul div.items.show{
-        top:60px;
-    }
+         top:60px;
+     }
     nav ul div.items li{
         text-align: center;
         line-height: 30px;
@@ -110,8 +110,8 @@ nav ul .search-icon .icon:hover{
 }@media screen and (max-width: 402px){
     nav ul .search-icon{
         width: 140px;
-        
+
     }nav ul .search-icon input{
-        width: 100px;
-    }
+         width: 100px;
+     }
 }
