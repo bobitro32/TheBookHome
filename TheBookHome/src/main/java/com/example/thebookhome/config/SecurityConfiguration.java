@@ -21,29 +21,31 @@ import java.security.Security;
 
 @Configuration
 public class SecurityConfiguration  {
+    @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.authorizeHttpRequests(authorizeRequest -> authorizeRequest.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .requestMatchers("/", "/users/login", "/users/register", "/users/login-error").permitAll()
+                        .requestMatchers("/", "/users/login", "/users/register", "/users/login-error").permitAll()
+                        .anyRequest().authenticated()
 
-        ).formLogin(formLogin ->{
-                formLogin.loginPage("/users/login")
+                ).formLogin(formLogin ->{
+                    formLogin.loginPage("/users/login")
 
-                        .defaultSuccessUrl("/")
-                        .failureForwardUrl("/users/register")
-                        .loginProcessingUrl("/users/login");
+                            .successForwardUrl("/")
+                            .usernameParameter("username")
+                            .passwordParameter("password")
+                            .failureForwardUrl("/users/register");
+                })
+                .logout(logout -> {
+                    logout.logoutUrl("/users/logout")
+                            .logoutSuccessUrl("/users/login")
+                            .invalidateHttpSession(true);
                 })
                 .build();
     }
 
     @Bean
     public UserDetailsService userDetailsService(UserRepo userRepository) {
-        UserDetails bob = User.builder()
-                .username(System.getenv("MY_USERNAME"))
-                .password(passwordEncoder().encode(System.getenv("MY_PASSWORD")))
-                .roles("ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(bob);
+        return new UserDetailService(userRepository);
     }
     @Bean
     public PasswordEncoder passwordEncoder(){

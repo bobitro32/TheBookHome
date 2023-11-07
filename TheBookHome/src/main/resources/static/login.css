@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: #1c2639;
+    padding-bottom: 100px;
+}
+.form-box{
+
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: #29314c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2 {
+    font-size: 2em;
+    color: #800aff;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.inputbox {
+    position: relative;
+    width: 300px;
+    margin-bottom: 40px;
+}
+.inputbox label{
+    position: absolute;
+    left: 0px;
+    color: #800aff;
+    font-size: 1em;
+    pointer-events: none;
+    text-transform: uppercase;
+    padding: 10px 0;
+
+}.inputbox input{
+     position: relative;
+     width: 100%;
+     padding: 10px 0;
+     background: transparent;
+     border: none;
+     border-bottom: 2px solid #999;
+     outline: none;
+     color: #fff;
+     font-size: 1em;
+
+     letter-spacing: 0.15em;
+ }.inputbox label span{
+     position: relative;
+     display: inline-flex;
+     letter-spacing: 0.05em;
+     transition: 0.2s ease-in-out;
+
+ }
+.inputbox input:focus ~ label span,
+ .inputbox input:valid ~ label span{
+     color:  #800aff;
+     transform: translateY(-25px);
+ }
+.remember{
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: red;
+    display: flex;
+    justify-content: center;
+}.remember label input{
+    margin-right: 10px;
+ }
+ .rememberMe {
+     margin-right: 5rem;
+ }
+
+.remember  a {
+    color: #800aff;
+    text-decoration: none;
+}
+.remember  a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #800aff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+.register {
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    margin: 25px 0;
+}
+.register p a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+    color: #800aff;
+}

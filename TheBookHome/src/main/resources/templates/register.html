@@ -13,15 +13,17 @@
     <header th:replace="~{index::header}"></header>
     <main>
         <form th:action="@{register}"
-              th:method="POST">
+              th:method="POST"
+              th:object="${userRegistrationDto}">
             <h2>New here?</h2>
             <div class="inputBox">
-                <input type="text" name="username" id="username" required>
-                <label for="username">Username</label>
+                <input type="text" th:field="*{username}" id="username" required>
+                <label for="username" >Username</label>
             </div>
             <div class="inputBox">
                 <input type="text" name="email" id="email" required>
                 <label for="email">Email</label>
+
             </div>
             <div class="inputBox">
                 <input type="password" name="password" id="password" required>

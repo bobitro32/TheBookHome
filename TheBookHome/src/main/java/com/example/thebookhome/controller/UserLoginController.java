@@ -14,12 +14,13 @@ public class UserLoginController {
     }
     @PostMapping("/users/login-error")
     public String onFailure(
-            @ModelAttribute("username") String email,
+            @ModelAttribute("username") String username,
             Model model) {
 
-        model.addAttribute("email", email);
+        model.addAttribute("username", username);
         model.addAttribute("bad_credentials", "true");
 
-        return "register";
+        return "login";
     }
+
 }

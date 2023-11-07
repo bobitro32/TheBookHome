@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,15 +14,19 @@
         <nav>
             <ul>
 
-                <li class="logo">TheBookHome</li>
+               <!-- <li class="logo" type="button"> TheBookHome</li>-->
+                <a href="/" class="logo">The BookHome</a>
                 <li class="btn"><span class="fa fa-bars"></span></li>
                 <div class="items">
 
                     <li><a href="">Home</a></li>
                     <li><a href="">Categories</a></li>
-                    <li><a th:href="@{/users/login}">Login</a></li>
-                    <li><a th:href="@{/users/register}">Register</a></li>
-                    <li><a th:href="@{/users/logout}">Logout</a></li>
+                    <li><a th:href="@{/users/login}" sec:authorize="!isAuthenticated()">Login</a></li>
+                    <li><a th:href="@{/users/register}" sec:authorize="!isAuthenticated()">Register</a></li>
+                    <form th:method="POST" th:action="@{/users/logout}">
+                        <li><a th:href="@{/users/logout}" sec:authorize="isAuthenticated()">Logout</a></li>
+                    </form>
+
                     <li><a href="">Profile</a></li>
                     <li><a href="" class="fa fa-shopping-cart"></a></li>
 
@@ -43,6 +47,7 @@
             })
         </script>
     </header>
+
 
 
 </body>

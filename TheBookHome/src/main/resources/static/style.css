@@ -17,10 +17,11 @@ nav ul {
     list-style: none;
     flex-wrap: wrap;
 }
-nav ul li.logo{
+nav ul a.logo{
     flex: 1;
     font-size: 30px;
     font-weight: 700;
+    text-decoration: none;
 }
 nav ul div.items{
     padding: 0 25px;
@@ -81,7 +82,7 @@ nav ul .search-icon .icon:hover{
     nav{
         padding: 10px 40px 10px 0;
     }
-    nav ul li.logo{
+    nav ul a.logo{
         display: none;
     }nav ul div.items{
          flex:4;
