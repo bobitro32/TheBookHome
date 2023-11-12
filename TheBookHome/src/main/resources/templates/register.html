@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/register.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <title>TheBookHome</title>
 </head>
@@ -14,7 +14,7 @@
     <main>
         <form th:action="@{register}"
               th:method="POST"
-              th:object="${userRegistrationDto}">
+              th:object="${userRegistrationDto}" class="registerForm">
             <h2>New here?</h2>
             <div class="inputBox">
                 <input type="text" th:field="*{username}" id="username" required>
@@ -36,6 +36,7 @@
             <div class="inputBox">
                 <input type="submit" value="Create">
             </div>
+
             <p>Already have an account ?<a th:href="login"> Login</a></p>
         </form>
     </main>

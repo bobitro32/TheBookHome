@@ -13,7 +13,7 @@ body main{
     min-height: 100vh;
     background: #1c2639;
 }
-form{
+.registerForm{
     background: #29314c;
     padding: 60px 80px 60px;
     text-align: center;
@@ -21,7 +21,7 @@ form{
     flex-direction: column;
     border-radius: 10px;
 }
-form h2{
+.registerForm h2{
     color: #fff;
     font-weight: 500;
     text-transform: uppercase;
@@ -85,11 +85,11 @@ form h2{
 .inputBox input[type="submit"]:hover{
     letter-spacing: 0.35em;
 }
-form p{
+.registerForm p{
     color: #fff;
     text-transform: uppercase;
 }
-form p a{
+.registerForm p a{
     color: var(--clr);
     font-weight: 500;
     text-decoration: none;

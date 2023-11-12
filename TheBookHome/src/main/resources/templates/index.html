@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <title>TheBookHome</title>
 
@@ -15,7 +15,7 @@
             <ul>
 
                <!-- <li class="logo" type="button"> TheBookHome</li>-->
-                <a href="/" class="logo">The BookHome</a>
+                <a th:href="@{/}" class="logo">The BookHome</a>
                 <li class="btn"><span class="fa fa-bars"></span></li>
                 <div class="items">
 
@@ -23,10 +23,11 @@
                     <li><a href="">Categories</a></li>
                     <li><a th:href="@{/users/login}" sec:authorize="!isAuthenticated()">Login</a></li>
                     <li><a th:href="@{/users/register}" sec:authorize="!isAuthenticated()">Register</a></li>
-                    <form th:method="POST" th:action="@{/users/logout}">
-                        <li><a th:href="@{/users/logout}" sec:authorize="isAuthenticated()">Logout</a></li>
-                    </form>
-
+                    <li>
+                        <form id="logoutForm" th:action="@{/users/logout}" method="post">
+                            <a href="#" onclick="document.getElementById('logoutForm').submit()" sec:authorize="isAuthenticated()">Logout</a>
+                        </form>
+                    </li>
                     <li><a href="">Profile</a></li>
                     <li><a href="" class="fa fa-shopping-cart"></a></li>
 

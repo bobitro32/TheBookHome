@@ -33,7 +33,8 @@ nav ul div.items{
      padding: 0 12px;
 
 
-}nav ul div.items a:hover{
+}
+nav ul div.items a:hover{
       color: red;
 
 }nav ul .search-icon{
