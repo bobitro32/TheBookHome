@@ -1,12 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 *{
     margin: 0;
     padding: 0;
-    color: #f2f2f2;
+    color: #ffffff;
     box-sizing: border-box;
 
 }
 nav{
-    background-color: #3b4460;
+    background-color: #1d232d;
     padding: 10px 40px 10px 70px;
     border: 1px solid #000;
     border-left: none;
@@ -29,13 +30,16 @@ nav ul div.items{
 
 }nav ul div.items a{
      text-decoration: none;
-     font-size: 20px;
+     font-size: 22px;
      padding: 0 12px;
 
 
 }
+nav ul a.logo:hover{
+    color: #800aff;
+}
 nav ul div.items a:hover{
-      color: red;
+      color: #800aff;
 
 }nav ul .search-icon{
       height: 40px;
@@ -112,7 +116,9 @@ nav ul .search-icon .icon:hover{
         text-align: center;
         line-height: 30px;
         margin: 30px 0;
-    }
+    }section{
+         padding: 2rem 2rem;
+     }
 }@media screen and (max-width: 402px){
     nav ul .search-icon{
         width: 140px;
@@ -121,3 +127,60 @@ nav ul .search-icon .icon:hover{
          width: 100px;
      }
 }
+section{
+    padding: 5rem 9%;
+}
+.home{
+    background: #1c2630;
+    background-size: cover;
+    background-position: center;
+}
+.home .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+}.home .row .content{
+    flex: 1 1 42rem;
+
+
+ }.home .row .books-slider{
+    flex: 1 1 42rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+.home .row .books-slider a img{
+    height: 24rem;
+
+}
+.home .row .books-slider a:hover img{
+    transform:scale(.9);
+}
+.home .row .books-slider .stand{
+    width: 70%;
+    margin-top: 0.5rem;
+}
+.home .row h3{
+    color: #800aff;
+    font-size: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}.home .row p {
+    color: #800aff;
+    font-size: 1.4rem;
+    line-height: 2;
+    padding: 1rem 0;
+ }.btn-shop-now{
+      margin-top: 1rem;
+      display:inline-flex;
+      padding:.9rem 3rem;
+      border-radius: .7rem;
+    text-decoration: none;
+      color:#fff;
+      background:#800aff;
+      font-size: 1.7rem;
+      cursor: pointer;
+      font-weight: 500;
+  }.btn-shop-now:hover{
+    background: #270a2a;
+  }

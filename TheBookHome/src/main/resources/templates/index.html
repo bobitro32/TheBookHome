@@ -6,49 +6,100 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <title>TheBookHome</title>
 
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
+<header>
+    <nav>
+        <ul>
 
-               <!-- <li class="logo" type="button"> TheBookHome</li>-->
-                <a th:href="@{/}" class="logo">The BookHome</a>
-                <li class="btn"><span class="fa fa-bars"></span></li>
-                <div class="items">
+            <!-- <li class="logo" type="button"> TheBookHome</li>-->
+            <a th:href="@{/}" class="logo">The BookHome</a>
+            <li class="btn"><span class="fa fa-bars"></span></li>
+            <div class="items">
 
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Categories</a></li>
-                    <li><a th:href="@{/users/login}" sec:authorize="!isAuthenticated()">Login</a></li>
-                    <li><a th:href="@{/users/register}" sec:authorize="!isAuthenticated()">Register</a></li>
-                    <li>
-                        <form id="logoutForm" th:action="@{/users/logout}" method="post">
-                            <a href="#" onclick="document.getElementById('logoutForm').submit()" sec:authorize="isAuthenticated()">Logout</a>
-                        </form>
-                    </li>
-                    <li><a href="">Profile</a></li>
-                    <li><a href="" class="fa fa-shopping-cart"></a></li>
-
-                </div>
-                <li class="search-icon">
-                    <input type="search" id="search" placeholder="Search">
-                    <label  class="icon fa fa-search" for="search">
-
-                    </label>
-
+                <li><a href="">Home</a></li>
+                <li><a href="">Categories</a></li>
+                <li><a th:href="@{/users/login}" sec:authorize="!isAuthenticated()">Login</a></li>
+                <li><a th:href="@{/users/register}" sec:authorize="!isAuthenticated()">Register</a></li>
+                <li>
+                    <form id="logoutForm" th:action="@{/users/logout}" method="post">
+                        <a href="#" onclick="document.getElementById('logoutForm').submit()" sec:authorize="isAuthenticated()">Logout</a>
+                    </form>
                 </li>
-            </ul>
-        </nav>
-        <script>
-            $('nav ul li.btn span').click(function(){
-                $('nav ul div.items').toggleClass("show")
-                $('nav ul li.btn span').toggleClass('show')
-            })
-        </script>
-    </header>
+                <li><a href="">Profile</a></li>
+                <li><a href="" class="fa fa-shopping-cart"></a></li>
 
+            </div>
+            <li class="search-icon">
+                <input type="search" id="search" placeholder="Search">
+                <label  class="icon fa fa-search" for="search">
+
+                </label>
+
+            </li>
+        </ul>
+    </nav>
+    <script>
+        $('nav ul li.btn span').click(function(){
+            $('nav ul div.items').toggleClass("show")
+            $('nav ul li.btn span').toggleClass('show')
+        })
+    </script>
+</header>
+<main>
+    <section class="home" id="home">
+
+        <div class="row">
+
+            <div class="content">
+                <h3>Upto 75% off</h3>
+                <p>Believe it or not, there is a science behind choosing the best fonts for books. Think about all the places you see type today. Whether it’s a phone, a computer screen, a book, an ad, a magazine or a menu, almost every minute of the day is spent reading something</p>
+                <a href="#" class="btn-shop-now">shop now</a>
+            </div>
+            <div class="swiper books-slider">
+                <div class="swiper-wrapper">
+                    <!--//here the images of the books should come from the database
+                    //TODO:-->
+                    <a href="#" class="swiper-slide"><img src="/images/atomic.jpg"> </a>
+                    <a href="#" class="swiper-slide"><img src="/images/criminal.jpg"> </a>
+                    <a href="#" class="swiper-slide"><img src="/images/mj.jpg"> </a>
+                    <a href="#" class="swiper-slide"><img src="/images/coding.jpg"> </a>
+                    <a href="#" class="swiper-slide"><img src="/images/richDad.jpg"> </a>
+                    <a href="#" class="swiper-slide"><img src="/images/love.jpg"> </a>
+
+                <!-- Add more slides as needed -->
+                </div>
+                <img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/stand.png" class="stand" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+<script >var swiper = new Swiper(".books-slider", {
+    loop:true,
+    centeredSlides: true,
+    autoplay: {
+        delay: 9500,
+        disableOnInteraction: false,
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    },
+});</script>
 
 
 </body>
