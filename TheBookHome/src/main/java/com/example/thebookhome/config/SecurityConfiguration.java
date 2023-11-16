@@ -1,5 +1,6 @@
 package com.example.thebookhome.config;
 
+import com.example.thebookhome.model.enums.RoleType;
 import com.example.thebookhome.repository.UserRepo;
 import com.example.thebookhome.service.impl.UserDetailService;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -25,15 +26,16 @@ public class SecurityConfiguration  {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.authorizeHttpRequests(authorizeRequest -> authorizeRequest.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         .requestMatchers("/", "/users/login", "/users/register", "/users/login-error").permitAll()
+                        .requestMatchers("/book/add").hasRole(RoleType.ADMIN.name())
                         .anyRequest().authenticated()
 
                 ).formLogin(formLogin ->{
                     formLogin.loginPage("/users/login")
 
-                            .successForwardUrl("/")
+                            .defaultSuccessUrl("/", true)
                             .usernameParameter("username")
                             .passwordParameter("password")
-                            .failureForwardUrl("/users/register");
+                            .failureForwardUrl("/users/login-error");
                 })
                 .logout(logout -> {
                     logout.logoutUrl("/users/logout")

@@ -29,6 +29,6 @@ public class UserDetailService implements UserDetailsService {
                 .authorities(userEntity.getRoles().stream().map(UserDetailService::map).toList()).build();
     }
     private static GrantedAuthority map(Role role){
-        return new SimpleGrantedAuthority(role.getRoleType().name());
+        return new SimpleGrantedAuthority("ROLE_"+role.getRoleType().name());
     }
 }

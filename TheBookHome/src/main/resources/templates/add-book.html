@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>addBook</title>
+</head>
+<body>
+    <header th:replace="~{index::header}"></header>
+    <h1>Add Book</h1>
+    <form th:action="@{/book/add}" th:method="post"
+          th:object="${addBookDto}" enctype="multipart/form-data">
+        <div class="bookBox">
+            <input type="text" id="title" th:field="*{title}">
+            <label for="title" >Title</label>
+        </div>
+        <div class="bookBox">
+            <input type="text" id="author" th:field="*{author}">
+            <label for="author" >Author</label>
+        </div>
+        <div class="bookBox">
+            <input type="text" id="description" th:field="*{description}">
+            <label for="description" >Description</label>
+        </div>
+        <div class="bookBox">
+            <input type="number" id="price" th:field="*{price}">
+            <label for="price" >Price</label>
+        </div>
+        <div class="bookBox">
+            <label for="category" >Category</label>
+            <select id="category"
+                    th:field="*{category}"
+                    th:errorclass="is-invalid"
+                    class="form-control">
+                <option value="">- Select category type -</option>
+                <option th:each="c : ${categories}"
+                        th:text="${c}"
+                        th:value="${c}">
+                </option>
+            </select>
+        </div>
+        <div class="bookBox">
+            <label for="img" >UploadImage</label>
+            <input type="file" id="img" th:field="*{file}">
+        </div>
+        <input type="submit" class="btn btn-info btn-lg" value="Add Book"/>
+    </form>
+
+    <main>
+
+
+
+
+    </main>
+</body>
+</html>

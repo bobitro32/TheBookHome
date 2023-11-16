@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         userEntity.setEmail(userRegistrationDto.getEmail());
         userEntity.setPassword(passwordEncoder.encode(userRegistrationDto.getPassword()));
 
-        Role role = roleRepo.findRoleByRoleType(RoleType.ROLE_USER);
+        Role role = roleRepo.findRoleByRoleType(RoleType.ADMIN);
 
         userEntity.setRoles(Arrays.asList(role));
         return userEntity;

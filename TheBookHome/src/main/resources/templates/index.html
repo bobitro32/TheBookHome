@@ -64,19 +64,19 @@
                 <div class="swiper-wrapper">
                     <!--//here the images of the books should come from the database
                     //TODO:-->
-                    <a href="#" class="swiper-slide"><img src="/images/atomic.jpg"> </a>
-                    <a href="#" class="swiper-slide"><img src="/images/criminal.jpg"> </a>
-                    <a href="#" class="swiper-slide"><img src="/images/mj.jpg"> </a>
-                    <a href="#" class="swiper-slide"><img src="/images/coding.jpg"> </a>
-                    <a href="#" class="swiper-slide"><img src="/images/richDad.jpg"> </a>
-                    <a href="#" class="swiper-slide"><img src="/images/love.jpg"> </a>
+                    <th th:each="book : ${books}">
+                        <a href="#" class="swiper-slide"><img th:src="${'data:image/jpeg;base64,' + book.getImage()}" alt="Book"></a>
+
+                    </th>
 
                 <!-- Add more slides as needed -->
                 </div>
                 <img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/stand.png" class="stand" alt="">
             </div>
-
         </div>
+
+
+
 
     </section>
 

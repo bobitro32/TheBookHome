@@ -112,3 +112,11 @@ button{
     text-decoration: underline;
     color: #800aff;
 }
+.errors{
+    margin-bottom:30px;
+    color: #18479f;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: -20px;
+    font-size: 15px;
+}
