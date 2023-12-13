@@ -13,8 +13,8 @@
 </head>
 <body>
 <header>
-    <nav>
-        <ul>
+    <nav class="nav">
+        <ul class="ul">
 
             <!-- <li class="logo" type="button"> TheBookHome</li>-->
             <a th:href="@{/}" class="logo">The BookHome</a>
@@ -22,7 +22,19 @@
             <div class="items">
 
                 <li><a href="">Home</a></li>
-                <li><a href="">Categories</a></li>
+                <div class="categories">
+                    <li><a href="" >Categories</a>
+                        <ul class="categories-dropdown">
+                            <li><a href="#">Romantic</a></li>
+                            <li><a href="#">CRIMINAL</a></li>
+                            <li><a href="#">COMPUTERS</a></li>
+                            <li><a href="#">PSYCHOLOGY</a></li>
+                            <li><a href="#">BUSINESS</a></li>
+                            <li><a href="#">SPORT</a></li>
+                        </ul>
+                    </li>
+                </div>
+
                 <li><a th:href="@{/users/login}" sec:authorize="!isAuthenticated()">Login</a></li>
                 <li><a th:href="@{/users/register}" sec:authorize="!isAuthenticated()">Register</a></li>
                 <li>

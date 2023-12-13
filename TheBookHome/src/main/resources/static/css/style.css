@@ -28,10 +28,11 @@ nav ul div.items{
     padding: 0 25px;
     display: inline-flex;
 
+
 }nav ul div.items a{
      text-decoration: none;
      font-size: 22px;
-     padding: 0 12px;
+     padding: 0 15px;
 
 
 }
@@ -47,14 +48,14 @@ nav ul div.items a:hover{
       display: flex;
       background: #f2f2f2;
       border-radius: 5px;
-  }nav ul .search-icon input{
+}nav ul .search-icon input{
        height: 100%;
        width: 200px;
        border: none;
        outline:none;
        padding: 0 10px;
        border-radius: 5px  0 0 5px;
-   }nav ul .search-icon .icon{
+}nav ul .search-icon .icon{
         height: 100%;
         width: 40px;
         line-height: 40px;
@@ -62,7 +63,7 @@ nav ul div.items a:hover{
         background: #ccccccb0;
         border-radius: 0  5px 5px 0;
         cursor: pointer;
-    }
+}
 nav ul .search-icon .icon:hover{
     background: #e6e6e6;
 }nav ul li.btn{
@@ -81,7 +82,25 @@ nav ul .search-icon .icon:hover{
       cursor: pointer;
   }nav ul li.btn span.show:before{
        content: '\f00d';
-   }
+  }
+.categories {
+    position: relative;
+}
+
+.categories-dropdown {
+    position: absolute;
+    z-index: 999;
+    background-color: #18479f;
+    display: none;
+    font-size: 30px;
+    width: max-content;
+
+}
+
+.categories:hover .categories-dropdown {
+    display: block;
+}
+
 
 @media screen and (max-width: 1052px){
     nav{
@@ -94,14 +113,17 @@ nav ul .search-icon .icon:hover{
     }
 }@media screen and (max-width: 800px){
     nav ul li.btn{
+
         display: block;
     }
     nav{
-        z-index: 1;
+        z-index: 999;
+        position: fixed;
         padding: 9px 40px 9px 0;
+
     }
     nav ul div.items{
-        z-index: -1;
+        z-index: 1;
         position: fixed;
         top: -400px;
         background: #3b4460;
