@@ -21,20 +21,9 @@
             <li class="btn"><span class="fa fa-bars"></span></li>
             <div class="items">
 
-                <li><a href="">Home</a></li>
-                <div class="categories">
-                    <li><a href="" >Categories</a>
-                        <ul class="categories-dropdown">
-                            <li><a href="#">Romantic</a></li>
-                            <li><a href="#">CRIMINAL</a></li>
-                            <li><a href="#">COMPUTERS</a></li>
-                            <li><a href="#">PSYCHOLOGY</a></li>
-                            <li><a href="#">BUSINESS</a></li>
-                            <li><a href="#">SPORT</a></li>
-                        </ul>
-                    </li>
-                </div>
+                <li><a th:href="@{/}">Home</a></li>
 
+                <li><a th:href="@{/categories}" >Categories</a></li>
                 <li><a th:href="@{/users/login}" sec:authorize="!isAuthenticated()">Login</a></li>
                 <li><a th:href="@{/users/register}" sec:authorize="!isAuthenticated()">Register</a></li>
                 <li>

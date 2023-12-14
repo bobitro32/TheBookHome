@@ -83,23 +83,7 @@ nav ul .search-icon .icon:hover{
   }nav ul li.btn span.show:before{
        content: '\f00d';
   }
-.categories {
-    position: relative;
-}
 
-.categories-dropdown {
-    position: absolute;
-    z-index: 999;
-    background-color: #18479f;
-    display: none;
-    font-size: 30px;
-    width: max-content;
-
-}
-
-.categories:hover .categories-dropdown {
-    display: block;
-}
 
 
 @media screen and (max-width: 1052px){
@@ -117,6 +101,7 @@ nav ul .search-icon .icon:hover{
         display: block;
     }
     nav{
+        width: 100%;
         z-index: 999;
         position: fixed;
         padding: 9px 40px 9px 0;

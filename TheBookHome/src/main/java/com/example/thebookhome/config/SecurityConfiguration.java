@@ -25,7 +25,7 @@ public class SecurityConfiguration  {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.authorizeHttpRequests(authorizeRequest -> authorizeRequest.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                        .requestMatchers("/", "/users/login", "/users/register", "/users/login-error").permitAll()
+                        .requestMatchers("/", "/users/login", "/users/register", "/users/login-error","/categories").permitAll()
                         .requestMatchers("/book/add").hasRole(RoleType.ADMIN.name())
                         .anyRequest().authenticated()
 
